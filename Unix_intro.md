@@ -52,6 +52,7 @@ Map your Microbial Genomics knowledge out. Knowledge mapping helps communicate i
 
 ## Load the Docker image to start working on the command-line
 - Firs open your Windows powershell as admin (by right clicking it)
+- password for the admin rights is Case&@45&&
 - open Docker app then run the following command by copying it from here.
 `docker run --rm -it qianxuanshe/mgjw_gabs:latest bash`
 
