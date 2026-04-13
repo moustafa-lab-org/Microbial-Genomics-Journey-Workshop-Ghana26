@@ -8,11 +8,11 @@ Ahmed M. Moustafa
 
 ## Syllabus
 * [Introductions](profile-ahmed.jpg)
+* [No Code? No Problem](No_Code_No_Problem.md)
+* [Sequencing Technologies](Sequencing_Technologies.md)
 * [Why is it important to learn microbial genomics?](Unix_intro.md/#why-is-it-important-to-learn-microbial-genomics)
 * [Aim](Unix_intro.md/#aim)
 * [Tips](Unix_intro.md/#tips)
-* [No Code? No Problem](No_Code_No_Problem.md)
-* [Sequencing Technologies](Sequencing_Technologies.md)
 * [Knowledge Map](Unix_intro.md/#knowledge-map)
 * [Part 1: Unix](Unix_intro.md/#unix)
   * [Why would I need to use command-line?](Unix_intro.md/#unix)
