@@ -7,8 +7,8 @@ Ahmed M. Moustafa
 **All sessions were recorded and they are available on** [YouTube](https://www.youtube.com/playlist?list=PLflzkSbbJ6yGWQETl5X0LDNLqi7K50WNQ).<br/>
 
 ## Syllabus
+* [Introductions](profile-ahmed.jpg)
 * [Why is it important to learn microbial genomics?](Unix_intro.md/#why-is-it-important-to-learn-microbial-genomics)
-* Introductions
 * [Aim](Unix_intro.md/#aim)
 * [Tips](Unix_intro.md/#tips)
 * [No Code? No Problem](No_Code_No_Problem.md)
