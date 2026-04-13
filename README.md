@@ -8,6 +8,7 @@ Ahmed M. Moustafa
 
 ## Syllabus
 * [Introductions](profile-ahmed.jpg)
+* [Tell us more about you](https://docs.google.com/forms/d/e/1FAIpQLSeB1jJ3yA_ML_rm9Mqb34OgbjqCHHfEtcQFTWvYSzlekIa9EQ/viewform?usp=publish-editor)
 * [No Code? No Problem](No_Code_No_Problem.md)
 * [Sequencing Technologies](Sequencing_Technologies.md)
 * [Why is it important to learn microbial genomics?](Unix_intro.md/#why-is-it-important-to-learn-microbial-genomics)

@@ -19,7 +19,7 @@ The sequencing platform you choose directly shapes what questions you can answer
 | Feature | Sanger | Short-Read NGS (Illumina) | Long-Read (ONT / PacBio) |
 |---------|--------|--------------------------|--------------------------|
 | Read length | 700–1,000 bp | 150–300 bp (paired-end) | 10,000–100,000+ bp |
-| Accuracy (raw) | ~99.9% | ~99.9% | ONT: ~95–99%; PacBio HiFi: ~99.9% |
+| Accuracy (raw) | ~99.99% | ~99.99% | ONT: ~99%; PacBio HiFi: ~99.9% |
 | Throughput | 1 read/reaction | Millions–billions of reads | Thousands–millions of reads |
 | Cost per genome (bacterial) | Prohibitive for WGS | ~$70 | ~$90–200 |
 | Time to data | ~2–4 hours | ~12–48 hours | ONT: minutes to hours; PacBio: hours |
@@ -59,7 +59,7 @@ The sequencing platform you choose directly shapes what questions you can answer
 |----------|--------|----------|
 | iSeq 100 | ~1.2 Gb | Small labs, targeted panels, teaching |
 | MiSeq | ~15 Gb | Bacterial WGS (1–20 genomes), amplicon sequencing |
-| NextSeq 550/1000/2000 | ~30–360 Gb | Medium-scale WGS, metagenomics |
+| NextSeq 550/1000/2000 | ~30–540 Gb | Medium-scale WGS, metagenomics |
 | NovaSeq 6000/X | ~1–16 Tb | Large-scale surveillance, thousands of genomes |
 
 #### Typical Bacterial WGS Workflow
@@ -115,29 +115,27 @@ The sequencing platform you choose directly shapes what questions you can answer
 | Platform | Output | Best For |
 |----------|--------|----------|
 | Flongle | ~2 Gb | Single isolate, rapid outbreak response |
-| MinION | ~50 Gb | Field deployable, 1–10 bacterial genomes |
-| PromethION | ~300 Gb | Large-scale projects, metagenomics |
+| MinION | ~15 Gb | Field deployable |
+| PromethION | ~120 Gb | Large-scale projects, metagenomics |
 
 #### Strengths for Microbiology
 - **Ultra-long reads** (records > 4 Mb!) — span entire operons, IS elements, phage regions
 - **Portable**: MinION runs off a laptop — used in field settings across Africa
 - **Real-time**: Start analyzing data during the run
 - **Native methylation detection**: See epigenetic modifications without bisulfite treatment
-- **Rapid library prep**: Some protocols < 10 minutes
 
 ### PacBio (Pacific Biosciences)
 
 #### How It Works
 - Single-molecule real-time (SMRT) sequencing
-- Polymerase anchored in a zero-mode waveguide (ZMW)
 - Circular consensus sequencing (CCS) → HiFi reads (Q30+, ~10–25 kb)
 
 #### Key Platforms
 
 | Platform | Output | Best For |
 |----------|--------|----------|
-| Sequel IIe | ~30 Gb HiFi | High-accuracy long-read WGS |
-| Revio | ~90 Gb HiFi | Large-scale, high-accuracy projects |
+| Vega | ~60 Gb HiFi | High-accuracy long-read WGS |
+| Revio | ~120 Gb HiFi | Large-scale, high-accuracy projects |
 
 #### Strengths for Microbiology
 - **HiFi reads**: Long AND accurate — best of both worlds
@@ -198,19 +196,17 @@ Combining short reads (accuracy) + long reads (contiguity):
 
 | Your Question | Recommended Approach |
 |--------------|---------------------|
-| "Is this *S. aureus* MRSA?" | Sanger (PCR + sequence *mecA*) or Illumina WGS |
-| "How are these 50 outbreak isolates related?" | Illumina WGS → SNP phylogeny |
-| "What resistance genes are in this isolate?" | Illumina WGS → ABRicate / AMRFinderPlus |
+| "How are these 50 outbreak isolates related?" | Illumina WGS or long read→ SNP phylogeny |
 | "Is *bla*NDM on a plasmid or chromosome?" | Long-read (ONT/PacBio) or hybrid assembly |
 | "What's the complete genome of our reference strain?" | Hybrid (Illumina + ONT/PacBio) |
-| "What bacteria are in this clinical sample?" | Illumina shotgun metagenomics |
+| "What bacteria are in this clinical sample?" | Illumina or long read shotgun metagenomics |
 | "I need results in 6 hours during an outbreak" | ONT MinION + rapid library prep |
 | "What's the pangenome of 1,000 isolates?" | Illumina WGS → Roary/Panaroo/WhatsGNU |
 | "What methylation patterns does this strain have?" | ONT or PacBio (native modification detection) |
 
 ---
 
-## The African Context: Practical Considerations
+## Practical Considerations
 
 ### Infrastructure Realities
 - **Power stability**: ONT MinION is battery-friendly; Illumina instruments need stable power and UPS
@@ -251,16 +247,3 @@ Combining short reads (accuracy) + long reads (contiguity):
 5. **ONT is transformative for resource-limited and field settings**
 6. **Cost is no longer the barrier it once was** — the barrier is training, and that's why you're here
 
----
-
-## Further Readings
-
-- Loman NJ & Pallen MJ (2015). Twenty years of bacterial genome sequencing. *Nature Reviews Microbiology*.
-- Wick RR et al. (2023). Benchmarking of long-read assemblers for prokaryote whole genome sequencing. *F1000Research*.
-- AllTheBacteria resource — [allthebacteria.org](https://allthebacteria.org)
-- Quick J et al. (2016). Real-time, portable genome sequencing for Ebola surveillance. *Nature*.
-- Hackflex protocol — [dx.doi.org/10.1186/s12864-019-6419-1](https://dx.doi.org/10.1186/s12864-019-6419-1)
-
----
-
-*"A genome without context is just letters. Sequencing gives you the letters — bioinformatics gives you the story."*
