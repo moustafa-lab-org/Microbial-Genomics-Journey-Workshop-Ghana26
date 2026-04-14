@@ -15,6 +15,7 @@ Ahmed M. Moustafa
 * [Aim](Unix_intro.md/#aim)
 * [Tips](Unix_intro.md/#tips)
 * [Knowledge Map](Unix_intro.md/#knowledge-map)
+* [MGJW Chatbot](Unix_intro.md/#mgjw-chat-ai-teaching-assistant-for-microbial-genomics)
 * [Part 1: Unix](Unix_intro.md/#unix)
   * [Why would I need to use command-line?](Unix_intro.md/#unix)
   * [How to open a terminal?](Unix_intro.md/#how-to-open-a-terminal)

@@ -59,6 +59,23 @@ Map your Microbial Genomics knowledge out. Knowledge mapping helps communicate i
 - After shutdown, restart and re-enter the SAME container
 `docker start -ai mgjw_student`
 
+## MGJW-Chat: AI Teaching Assistant for Microbial Genomics
+
+MGJW-Chat is an AI-powered teaching assistant built specifically for this workshop. It has been trained on documentation, papers, and source code from all the tools we cover (FastQC, Shovill, Prokka, Bakta, Snippy, IQ-TREE, Panaroo, and more), so it can answer your questions with workshop-specific guidance.
+
+**How to use it:**
+1. Open [http://34.212.83.8:5000](http://34.212.83.8:5000) in your browser
+2. Select your background profile from the sidebar (e.g., Graduate Student, Clinician, PI)
+3. Ask any question about the workshop topics — tool usage, error messages, concepts, or troubleshooting
+
+**Good questions to try:**
+- "How do I run Shovill to assemble my reads?"
+- "What does N50 mean and why does it matter?"
+- "I got an error running Prokka, here is the message: ..."
+- "What is the difference between core and accessory genome?"
+
+**Note:** The chatbot is a supplement to the instructors, not a replacement. If you get an answer you're unsure about, always feel free to ask us.
+
 ## Unix
 
 ### Why would I need to use command-line?
