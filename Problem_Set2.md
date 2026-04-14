@@ -3,7 +3,7 @@
 ## Part 1
 * Try this command to list all environments installed on your computer (conda info --envs)
 * Try this command to list all packages installed in the mash environment (conda list -n mash)
-* Let's try using FASTQC, you need to activate its environment first. You will use files from the folder that you downloaded for Problem Set 1.
+* Let's try using FASTQC, you need to activate its environment first (Did you install??). You will use files from the folder that you downloaded for Problem Set 1.
 ```
 conda activate fastqc
 cd MGJW/problem_set1/fastq
