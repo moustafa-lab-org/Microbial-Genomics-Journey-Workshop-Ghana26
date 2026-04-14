@@ -3,13 +3,6 @@
 __Instructor__<br/>
 Ahmed M. Moustafa
 
-__Teaching Assistants__<br/>
-Daniel P. Morreale (Dan)<br/>
-Qianxuan She (Sean)<br/>
-Erin Marie Theiller (Erin)<br/>
-
-
-
 ## Why is it important to learn microbial genomics?
 
 You might already know the answer.
