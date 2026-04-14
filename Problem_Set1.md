@@ -40,10 +40,23 @@ This is quick manual of how to use vi (https://www.marquette.edu/mathematical-an
 * Try to rerun the file `./script.sh`, did it work this time?
 
 ## Part 2
+* Install conda using thes two commands and follow step and say yes to all questions
+`wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
+`bash Miniconda3-latest-Linux-x86_64.sh`
+`source /root/.bashrc`
+* Now you should see the word `(base)` next to your username like this `(base) root@1c2dbabe1:/data#`
+* Let's install one tool `abricate` with conda using these commands
+`create -n abricate -c conda-forge -c bioconda -c defaults abricate`
+`conda activate abricate`
+`abricate --check`
+
+## Part 3
 * Install wget using conda in a new environment (optional)
-* Download this file from this dropbox URL [problem_set1.tar.gz](https://www.dropbox.com/s/fel9pq2hxj58gmo/problem_set1.tar.gz?dl=0) and put it in MGJW or using `wget -O problem_set1.tar.gz https://www.dropbox.com/s/fel9pq2hxj58gmo/problem_set1.tar.gz?dl=0 --no-check-certificate`
+* Download this file from this dropbox URL [problem_set1.tar.gz](https://www.dropbox.com/s/fel9pq2hxj58gmo/problem_set1.tar.gz?dl=0) and put it in MGJW or using 
+`wget -O problem_set1.tar.gz https://www.dropbox.com/s/fel9pq2hxj58gmo/problem_set1.tar.gz?dl=0 --no-check-certificate`
 * Make a new directory called problem_set1 in MGJW
-* Unarchive the file (tar -xf problem_set1.tar.gz -C ./problem_set1)
+* Unarchive the file using 
+`tar -xf problem_set1.tar.gz -C ./problem_set1`
 * What do you see after you unarchived the file? Do you have one directory/file or multiple?
 * List all fasta files with the extension ".fasta.gz" in the fasta folder
 * Uncompress all files ending with .fasta.gz
