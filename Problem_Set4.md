@@ -8,17 +8,12 @@
 * Unarchive the file `tar -xf problem_set4.tar.gz -C ./`
 
 ### Prokka
-**Prokka because of a blast version error (mac or windows), open your prokka environment and run the following command**
-`conda install -c bioconda blast=2.9.0`
-**This will roll back Blast to a compatible version (v2.9.0) and should fix the issue.**<br/>
-
 As was mentioned in the lecture, we recommend you consider using Bakta in the lab. However, you have to download the Bakta database, which is ~45 GB. So we can talk about annotation in class, we're going to use Prokka. The core concepts and output files are the same. If you're curious, we would be happy to show you a sample Bakta result for a different dataset.
 
 Let's annotate an assembled genome with more options. Notice we use `--proteins` option which is a Fasta file of trusted proteins to first annotate from. This will be very helpful if you or the field have a way of naming the proteins in your species of interest and you want to be consistent. As this genome I gave you to annotate is C. difficle, I got the proteins file for the reference genome from the [C. difficile genome page](https://www.ncbi.nlm.nih.gov/genome/?term=difficile) on NCBI.
 ```
-conda activate prokka
 prokka -h
-cd ~/MGJW/problem_set1/fasta
+cd /data/MGJW/problem_set1/fasta
 prokka --outdir annot_genome4 --kingdom Bacteria --locustag genom4 --proteins ../GCF_018885085.1_ASM1888508v1_protein.faa --genus Clostridioides --species difficile --prefix genome4 genome4.fasta
 ```
 ## Part 2
@@ -26,9 +21,9 @@ prokka --outdir annot_genome4 --kingdom Bacteria --locustag genom4 --proteins ..
 ### ABRicate
 [ABRicate](https://github.com/tseemann/abricate) is a tool for mass screening of contigs for antimicrobial resistance, virulence genes or genes of interest. It comes bundled with multiple databases: NCBI, CARD, ARG-ANNOT, Resfinder, MEGARES, EcOH, PlasmidFinder, Ecoli_VF and VFDB. You can also make your own database. Let's check the databases available in ABRicate. You can open abricate_DBs.csv in excel after you run these commands or using `less` command.
 ```
-cd ~/MGJW/problem_set4/
+cd /data/MGJW/problem_set4/
 conda activate abricate
-cd ~/MGJW/problem_set4/abricate_genomes
+cd /data/MGJW/problem_set4/abricate_genomes
 abricate --list --csv > abricate_DBs.csv
 less abricate_DBs.csv
 ```
@@ -60,20 +55,3 @@ abricate --minid 30 --minco 70 --db Sau genome3.fasta > genome3_Sau.tab
 Did the second command work? Try to fix it!<br/>
 Note: **ABRicate uses blast make database command to make this database `makeblastdb -in sequences -title tinyamr -dbtype nucl`**
 
-## Session 5 Readiness
-If you did not do that already in the Unix session, you will need to install Blast and MLST for Session 5. If you are not sure, you can check the installed environments using `conda info --envs`.<br/>
-
-### Install mlst
-[mlst](https://github.com/tseemann/mlst)
-```
-mamba create -n mlst -c conda-forge -c bioconda -c defaults mlst
-conda activate mlst
-mlst
-```
-### Install blast
-[blast](https://www.ncbi.nlm.nih.gov/books/NBK279690/)
-```
-mamba create -n blast -c bioconda blast
-conda activate blast
-blastn
-```

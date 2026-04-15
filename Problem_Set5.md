@@ -14,7 +14,6 @@ datasets download genome accession GCF_000009645.1  GCF_000010465.1
 * Move these two files to MGJW
 * Make a nucleotide blast database of both files. Check the name of the files and then concatenate them similar to the commands below. **You will need to modify these commands based on the files' names.**
 ```
-conda activate blast
 cat genome3.fasta genome4.fasta > genomes_3_4_combined.fasta
 makeblastdb -in genomes_3_4_combined.fasta -title two_staph_blast_db -dbtype nucl
 blastn -query Two_genes.fasta -db genomes_3_4_combined.fasta -outfmt '6 qseqid sacc evalue qcovs pident' -out Two_genes_output.txt
@@ -24,8 +23,7 @@ less Two_genes_output.txt
 ### Mlst
 Let's type a S. aureus genome!
 ```
-conda activate mlst
-cd ~/MGJW/problem_set4/abricate_genomes
+cd /data/MGJW/problem_set4/abricate_genomes
 mlst --scheme saureus genome3.fasta
 ```
 **What is the Sequence Type (ST) of this genome?**
@@ -45,13 +43,8 @@ less mlst_report.tsv
 
 
 ## Part 2 for Session 6 Readiness
-You will need to install Snippy for Session 6.
 
 [snippy](https://github.com/tseemann/snippy)
 ```
-mamba create -n snippy -c bioconda snippy
-conda activate snippy
 snippy
 ```
-## Bash Script
-[Looping by Qianxuan (Sean) She](https://github.com/qianxuans/MGJW_LoopingScript)

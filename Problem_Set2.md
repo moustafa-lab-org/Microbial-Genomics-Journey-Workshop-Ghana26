@@ -1,8 +1,30 @@
 # MGJW Problem Set 2
 
 ## Part 1
+### Install miniconda
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash ./Miniconda3-latest-Linux-x86_64.sh
+source .bashrc
+```
+* Follow instructions after the bash command and keep confirming and accepting.<br/>
+* You can then use the source command to activate conda in your current session or close and reopen the app.<br/>
+* [Bioconda](https://bioconda.github.io/) lets you install thousands of software packages related to biomedical research using the conda package manager.
+* You will need a one-time set up to set up the channels for bioconda.
+```
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+```
+**Now you are ready to install new tools. It is highly recommended to create a new environement for each tool separetely. Why do you think we need new env?**
+* Let's install abricate
+```
+conda create -n abricate -c conda-forge -c bioconda -c defaults abricate
+conda activate abricate
+abricate --check
+```
 * Try this command to list all environments installed on your computer (conda info --envs)
-* Try this command to list all packages installed in the mash environment (conda list -n mash)
 * Let's try using FASTQC, you need to activate its environment first (Did you install??). You will use files from the folder that you downloaded for Problem Set 1.
 ```
 conda activate fastqc

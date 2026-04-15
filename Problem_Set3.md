@@ -7,8 +7,7 @@ FASTQ file Extensions: .fastq, .fq
 ## Part 1
 **In my instructions, I do not necessarily instruct you to change directory to MGJW or any other one, use the skills you learnt in the Unix command session to do that. Also, I may not instruct to activate the conda env in some cases.**
 
-### shovill
-**If you get an error saying `Cannot open temporary file kmc_00253.bin and Could not determine genome size from ''`, use `ulimit -n 2048` to increase limit for opened files for the kmc tool on MacOS.**<br/>
+### skesa
 
 **You can skip this download step if you already donwloaded it for session 3.**<br/>
 Let's assemble a genome. To follow the steps here, you need to download the files available [here](https://www.dropbox.com/scl/fo/8ni4qic39mb3ojapgci1x/h?dl=0&rlkey=p6gyncbcees8754go5s8votvu).
@@ -24,8 +23,8 @@ You will see that this assembled genome is very fragmented (around 3000 contigs)
 
 ## Part 2
 
-## quast
-* Let's try quast! Go to NCBI and download the reference genome file for Pseudomonas aeruginosa (PAO1).
+## checkm
+* Let's try checkm! Go to NCBI and download the reference genome file for Pseudomonas aeruginosa (PAO1).
 
 >Optionally, you can download the reference genome for P. aeruginosa (PAO1) right from the command line using ncbi-datasets. If you haven't previously installed ncbi-datasets, you can install it in a fresh environment using the following commands:
 ```
@@ -37,13 +36,7 @@ To download the PAO1 reference genome, you can run this command:
 ```
 datasets download genome taxon 'Pseudomonas aeruginosa' --reference
 ```
-Once downloaded, unzip the file and retrieve the genome. Now you can proceed with using quast!
-
-```
-conda activate quast
-quast.py contigs.fa -r GCF_000006765.1_ASM676v1_genomic.fna.gz
-```
-You will find quast_results folder and in there you will find the latest folder, you can double click report.html and it will open the file in your browser. What are the N50 and N90 for this genome?
+Once downloaded, unzip the file and retrieve the genome. Now you can proceed with using checkm! Think about the command 
 
 * What is the L50 and L90 for genome4.fasta from problem_set1?
 
@@ -62,24 +55,6 @@ busco -i ~/MGJW/problem_set3/out_S56/contigs.fa -l pseudomonadales_odb10 -o busc
 * Which genome has better metrics?
 * Why do you think this genome assembly is better?
 
-## Part 3 for Session 4 Readiness
-If you did not do that already in the Unix session, you will need to install Prokka and Abricate for Session 4. If you are not sure, you can check the installed environments using `conda info --envs`.<br/>
 
-### Install Prokka
-[Prokka](https://github.com/tseemann/prokka)
-```
-conda deactivate
-mamba create -n prokka -c bioconda prokka
-conda activate prokka
-prokka
-```
-### Install abricate
-[abricate](https://github.com/tseemann/abricate)
-```
-conda deactivate
-mamba create -n abricate -c conda-forge -c bioconda -c defaults abricate
-conda activate abricate
-abricate --check
-```
 ## Reproducibility
 [Reproducibility by Daniel P. Morreale](Reproducability.md)
