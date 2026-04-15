@@ -37,7 +37,6 @@ In this course, we will use [Prokka](https://github.com/tseemann/prokka). Howeve
 ## prokka
 Let's annotate the genome that we assembled last time. What is the number of CDS (Hint: check .faa file)?
 ```
-conda activate prokka
 cd ~/MGJW/problem_set3/out_S56
 prokka contigs.fa
 ```

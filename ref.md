@@ -25,7 +25,6 @@ Let’s try using a tool called bwa to decontaminate our samples from phiX reads
 * We will then need to extract mapped reads and count how many reads mapped to phiX.
 The commands below summarize the multiple steps we just discussed.
 ```
-conda activate snippy
 bwa index phiX.fasta
 bwa mem -M -t 2 -o output.sam phiX.fasta ~/MGJW/problem_set3/S56_R1.fastq ~/MGJW/problem_set3/S56_R2.fastq
 samtools view -b -F 4 output.sam > mapped.bam
@@ -40,13 +39,6 @@ Let's produce a core snp alignment for our Staphylococcus  aureus genome from pr
 * Let's assume we do not know much about this genome. The first question is which genome from the public database I should select to compare this genome to. If you have no knowledge, you may choose the reference that is most commonly used in publication (e.g. N315 for S. aureus and PAO1 for P. aeruginosa). Let's download N315.
 * Go to [assembly](https://www.ncbi.nlm.nih.gov/assembly/) page on NCBI. How many assembled genomes are available for S. aureus on GenBank and RefSeq?
 * Go to the [genome](https://www.ncbi.nlm.nih.gov/genome/?term=Staphylococcus+aureus) page of S. aureus and then press on Genome Assembly and Annotation report and then search for strain N315. Press on the accession number NC_002745.2. Now let's try to download a fasta file. Press on send to and then select file and then select fasta. This should download the fasta file. Do the same step but for strain Newman (NC_009641.1).
-
-```
-conda activate snippy
-cd ref_based
-snippy --outdir N315_genom3 --ref N315.fasta --ctgs ~/MGJW/problem_set1/fasta/genome3.fasta
-```
-How many snps were found between our isolate and the reference? (30094 SNPs). Now let's add a new layer of information that will help us choose a better reference and see how would this affect the number of SNPs. From last session, we typed this genome using MLST and it rturned out to be ST398. Now let's do the same steps but with a genome that is ST398. M357 is a ST398 genome. I already know that from previous work.
 
 ```
 snippy --outdir M357_genome3 --ref M357.fasta --ctgs ../problem_set1/fasta/genome3.fasta

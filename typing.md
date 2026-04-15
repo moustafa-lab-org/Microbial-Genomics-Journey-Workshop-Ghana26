@@ -14,7 +14,6 @@ A collection of curated, non-redundant genomic DNA, transcript (RNA), and protei
 
 Let's make our blast database!
 ```
-conda activate blast
 cat ../outputs/annot_genome3/genome3.faa ../outputs/annot_genome4/genome4.faa > genomes_3_4_combined.faa
 makeblastdb -in genomes_3_4_combined.faa -title test_blast_db -dbtype prot
 blastp -query Two_genes.faa -db genomes_3_4_combined.faa -max_target_seqs 5 -outfmt '6 qseqid sacc evalue qcovs pident' -out Two_genes_output.txt
@@ -32,8 +31,7 @@ Strain variations and the impact on virulence, pathogensis and other phenotypes.
 
 [MLST](https://github.com/tseemann/mlst) is a tool for screening contig files against traditional [PubMLST](https://pubmlst.org/) typing schemes.
 ```
-conda activate mlst
-cd ~/MGJW/problem_set4/abricate_genomes
+cd /data/MGJW/problem_set4/abricate_genomes
 mlst genome4.fasta
 ```
 ### Limitation
