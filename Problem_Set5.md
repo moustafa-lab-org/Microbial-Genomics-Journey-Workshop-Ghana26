@@ -40,11 +40,3 @@ Let's take a look at the report:
 ```
 less mlst_report.tsv
 ```
-
-
-## Part 2 for Session 6 Readiness
-
-[snippy](https://github.com/tseemann/snippy)
-```
-snippy
-```

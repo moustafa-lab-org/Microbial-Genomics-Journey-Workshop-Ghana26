@@ -42,15 +42,6 @@
 prokka --outdir <STRAIN NAME> --kingdom Bacteria --prefix <STRAIN NAME> --gcode 11 --genus Neisseria <file>.fasta
 
 ```
-##### Docker:
-###### Pull the docker image
-```
-docker pull qianxuanshe/mgjw-sep2023-s7:latest
-```
-##### Run the docker image
-```
-docker run -it qianxuanshe/mgjw-sep2023-s7
-```
 ##### Make directory for Prokka output and go to the directory
 ```
 mkdir prokka_results
