@@ -24,25 +24,13 @@ Here are some examples of how the pangenome has been used in research:
 ## Roary
 [Roary](http://sanger-pathogens.github.io/Roary/) is a tool designed to quickly build large-scale pan genomes for prokaryote populations, consisting of hundreds or thousands of isolates. It identifies core and accessory genes, enabling researchers to gain insights into the genetic structure of prokaryotic genomes. Roary can allow efficient analysis on a standard desktop without sacrificing accuracy. It will give different outputs which can be explored and understood from the explanation available from roary website.
 
-### Conda:
 ```
-conda activate roary
-cd ~/MGJW
 mkdir roary_results
 cd roary_results
 roary ../gff/*.gff
 ```
 **gff files and folder are available in the problem set 6 dataset**
 
-### Docker:
-#### Pull the docker image
-```
-docker pull qianxuanshe/mgjw-sep2023-s7:latest
-```
-#### Run the docker image
-```
-docker run -it qianxuanshe/mgjw-sep2023-s7
-```
 #### Make the directory for roary output, and go to the directory
 ```
 mkdir roary_results
