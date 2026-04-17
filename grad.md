@@ -60,7 +60,7 @@ iqtree2 -s core_gene_alignment.aln -m MFP -bb 1000
 ```
 
 * Copy your file from the docker image, you will need to change a159a85b2eee to the docker id which next to your root after the @ sign and change location to where your file is in the docker image
+
 ```
-cd C:\Users\$env:USERNAME\Downloads
-docker cp a159a85b2eee:/data/GH26/tree/GH26_tree.contree C:\Users\$USER\Downloads
+docker cp a159a85b2eee:/Path/to/folder/file_name.contree C:\Users\$env:USERNAME\Downloads
 ```
