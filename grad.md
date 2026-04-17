@@ -1,11 +1,35 @@
 # Microbial Genomics Journey Workshop Ghana 2026
 ## Session 13: Graduation Project
+
+### Teaching Evaluations
+Please evaluate my teaching!<br/>
+To start the survey, you may use either of the two choices (the Survey Access Code or
+the QR code), whichever you find easiest or quickest to use.
+1. Please access this [Survey title: "Teaching Evaluations" link](https://redcap.chop.edu/surveys/). Then enter this code: WAE4YWJYK.
+2. Teaching Evaluation QR Code
+![Teaching Evaluation QR Code](Teaching_QR.jpg)
+
+
+Please complete the survey below as follows.
+* Division of Faculty Member (GI/Nutrition/Hepatology)
+* Faculty Member (Ahmed M Moustafa)
+* Type of teaching (Lectures/Discussions etc.)
+* Date of Teaching (select today)
+* Topic of Lecture (Microbial Genomics Journey Workshop-1 week)
+* Your Position (put your position)
+* Quality of this instructor (choose a value)
+* Comments (optional but will be appreciated)
+
+### updated knowledge map
+We started this workshop with "Map your Microbial Genomics knowledge out". Knowledge mapping helps communicate information and solve complex problems. Now it is time to update your knowledge map with what we learnt in this workshop. Here is my version. You can access a powerpoint version of this Microbial genomics knowledge map [here](Knowledge_Map_2.pptx).<br/>
+![Knowledge Map](Knowledge_Map_final.jpg)
+
+---
 ### Description
 * There will be 3 teams. Each team will work together on a project with certain comparative genomics questions to try to answer. We talked about too many tools and approaches, this project will be the most important part of the workshop as you will be able to apply what you have learnt so far and put it all together.
-* You can access the dataset from `wget -O final_project_GH26.tar.gz "https://www.dropbox.com/scl/fi/h4fudinopn6ozz5ig9cwg/final_project_GH26.tar.gz?rlkey=2izl4j1g2g35w52upokb431q7&st=w6rh5k8o&dl=0"`.
-* `mkdir final_project_GH26`
-* `tar -xf final_project_GH26.tar.gz -C ./final_project_GH26`
-* There is a fastq folder with 7 genomes and 1 file showing case and control designations. Download from here 
+* You can access the dataset from `wget -O GH26.zip "https://www.dropbox.com/scl/fi/nul61uvt3plh6sgbj2t7r/GH26.zip?rlkey=ggy43gxq7ru9uzwc4a4qs6usx&st=ogwaczca&dl=0"`.
+* `unzip GH26.zip -d GH26`
+* There is assemblies folder with 6 genomes and 1 file showing case and control designations.
 * Each team will have to present their methods, main commands and major findings.
 
 ### Thoughts and Tips
@@ -13,9 +37,21 @@
 * The readme file on github with the syllabus has a nice summary for all steps and tools we discussed.
 
 ### Questions to answer
-These 7 genomes are from a single species. There are two group of isolates (case and control). You are provided with fastq reads files and fasta files.
+These 6 genomes are from a single species. There are two group of isolates (case and control). You are provided with fastq reads files and fasta files.
 1. What are the differences between the genomes in the case group vs control group?
 2. Build a phylogenetic tree for these genomes. Describe your findings on the tree!
 
 ### Solution
 
+* For each file you can do abricate or prokka using a command like this
+
+```
+prokka --outdir GCA_000775375.1 --prefix GCA_000775375.1 GCA_000775375.1.fasta
+abricate GCA_000775375.1.fasta > GCA_000775375.1.tab
+```
+* to run pangenome and a tree using the output from the pangenome step
+
+```
+roary -e -n -p 8 *.gff
+iqtree -s core_gene_alignment.aln -m MFP -bb 1000
+```

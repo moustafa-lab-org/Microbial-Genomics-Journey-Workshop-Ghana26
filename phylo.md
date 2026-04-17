@@ -41,7 +41,7 @@ conda deactivate
 #### Run IQ Tree with model finder
 ```
 conda activate iqtree
-iqtree -s clean.full.aln -m MFP -bb 1000
+iqtree2 -s clean.full.aln -m MFP -bb 1000
 ```
 
 #### You did it! The program outputs a bunch of files, and you should read about what each one is. But the <NAME>.contree can be opened in [Itol](https://itol.embl.de/tree/15914236153194331681913910) or Figtree, and it includes the branch support values.
